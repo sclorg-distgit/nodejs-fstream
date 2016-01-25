@@ -4,7 +4,7 @@
 
 Name:       %{?scl_prefix}nodejs-fstream
 Version:    1.0.3
-Release:    1.sc1%{?dist}
+Release:    2%{?dist}
 Summary:    Advanced file system stream objects for Node.js
 License:    BSD
 Group:      System Environment/Libraries
@@ -25,6 +25,7 @@ a symlink, etc.
 
 %prep
 %setup -q -n package
+%nodejs_fixdep graceful-fs '>= 4.1.2'
 
 %build
 #nothing to do
@@ -46,6 +47,9 @@ rm -rf %{buildroot}
 %doc LICENSE README.md examples
 
 %changelog
+* Tue Dec 01 2015 Tomas Hrcka <thrcka@redhat.com> - 1.0.3-2
+- Use fixdep to fix dependency on graceful-fs
+
 * Fri Jan 09 2015 Tomas Hrcka <thrcka@redhat.com> - 1.0.3-1
 - New upstream release
 - Fix bogus date in first changelog entry
