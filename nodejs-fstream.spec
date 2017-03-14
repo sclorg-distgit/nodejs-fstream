@@ -4,9 +4,9 @@
 
 Name:       %{?scl_prefix}nodejs-fstream
 Version:    1.0.10
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Advanced file system stream objects for Node.js
-License:    BSD
+License:    ISC
 URL:        https://github.com/isaacs/fstream
 Source0:    http://registry.npmjs.org/fstream/-/fstream-%{version}.tgz
 BuildArch:  noarch
@@ -38,6 +38,9 @@ cp -pr lib fstream.js package.json %{buildroot}%{nodejs_sitelib}/fstream
 %doc LICENSE README.md examples
 
 %changelog
+* Mon Mar 06 2017 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.0.10-2
+- Correct license
+
 * Wed Sep 21 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.0.10-1
 - Updated with script
 
